@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\NoticiaController;
 use App\Models\Contacto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,4 @@ Route::post('/guardar_formulario', [ContactoController::class, 'guardarFormulari
 
 Route::get('/mensajes', [ContactoController::class, 'listado']);
 
+Route::resource('noticia', NoticiaController::class)->parameters(['noticia' => 'noticia']);
