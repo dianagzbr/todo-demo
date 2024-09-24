@@ -27,7 +27,9 @@ Route::post('/guardar_formulario', [ContactoController::class, 'guardarFormulari
 
 Route::get('/mensajes', [ContactoController::class, 'listado']);
 
-Route::resource('noticia', NoticiaController::class)->parameters(['noticia' => 'noticia']);
+Route::resource('noticia', NoticiaController::class)
+    ->parameters(['noticia' => 'noticia']);
+    //->middleware ('auth');
 
 Route::middleware([
     'auth:sanctum',
